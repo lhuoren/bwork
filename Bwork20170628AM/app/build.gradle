@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+
+android {
+//    signingConfigs {
+//        release {
+//            keyAlias 'china'
+//            keyPassword 'anhuitong'
+//            storeFile file('D:/android_workspace/Bwork20170628AM/anhuitong.jks')
+//            storePassword 'anhuitong'
+//        }
+//        debug {
+//            keyAlias 'china'
+//            keyPassword 'anhuitong'
+//            storePassword 'anhuitong'
+//            storeFile file('C:/Users/access/.android/debug.keystore')
+//        }
+//    }
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    android { compileOptions.encoding = "UTF-8" }//加如这一行即可
+    defaultConfig {
+        applicationId "com.singun.openvpn.client"
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+//        jackOptions {
+//            enabled true
+//        }
+        multiDexEnabled true
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                GETUI_APP_ID : "GI80JYv9RE74cxonTygVf2",
+                GETUI_APP_KEY : "8Hwv2so0yK81JzYKP81eT2",
+                GETUI_APP_SECRET : "0h21SarvHp6eHDHPBu3yr9"
+        ]
+    }
+//    dexOptions {
+//        incremental true
+//    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    //        exclude group: 'com.android.support', module: 'support-annotations'
+    //    })
+    //    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(path: ':openvpn')
+    compile files('libs/afinal.jar')
+    compile files('libs/app_process_library.jar')
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/protobuf-java-2.3.0.jar')
+    //    compile files('libs/okhttp-2.7.5.jar')
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile 'com.android.support:palette-v7:25.2.0'
+    // https://maven-badges.herokuapp.com/maven-central/com.google.code.gson/gson
+    compile 'com.google.code.gson:gson:2.8.0'
+    // https://android.googlesource.com/platform/frameworks/volley
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/GetuiSDK2.11.1.0.jar')
+    /**Okhttp的封装*/
+    compile 'com.zhy:okhttputils:2.6.2'
+    /**引入eventbus*/
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //小米jar包
+    provided files('libs/miui-enterprise-sdk.jar')
+}
+//tasks.withType(JavaCompile) {
+////    options.encoding = "UTF-8"
+//    options.encoding = "GBK"
+//}

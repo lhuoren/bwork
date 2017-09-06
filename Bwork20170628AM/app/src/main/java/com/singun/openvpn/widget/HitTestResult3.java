@@ -1,0 +1,18 @@
+package com.singun.openvpn.widget;
+
+/**
+ * Created by Administrator on 2017-04-16.
+ */
+public class HitTestResult3 {
+    public boolean buttonRemove; //是否点击在删除按钮上
+    public int index = -1; //应用位置
+    public boolean inIcon; //是否点击在图标上
+
+    public HitTestResult3() {
+    }
+
+    public HitTestResult3(int index, boolean buttonRemove) {
+        this.index = index;
+        this.buttonRemove = buttonRemove;
+    }
+}

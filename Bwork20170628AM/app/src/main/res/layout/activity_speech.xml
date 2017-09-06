@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.singun.openvpn.ui.EgSpeechActivity" >
+
+
+    <Button
+        android:id="@+id/btn_speek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_speak" />
+    <Button
+        android:id="@+id/btn_xz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="允许卸载" />
+    <Button
+        android:id="@+id/btn_jzwl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="禁止网络" />
+</LinearLayout>
